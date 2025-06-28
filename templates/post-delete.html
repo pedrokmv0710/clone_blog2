@@ -1,0 +1,11 @@
+<!-- post delete-->
+{% extends "_base.html" %}
+{% block content %}
+<h2>Eliminar post</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de que quieres eliminar el post "{{ post.title }}"?</p>
+        <button type="submit">Eliminar</button>
+    </form>
+<a href="{% url 'post-detail' post.pk %}">Cancelar</a>
+{% endblock content %}
